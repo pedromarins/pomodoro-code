@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 16px;
+    background: #C84949;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 0;
+}
+
+.titulo {
+    font-size: 1em;
+    text-align: left;
+    margin: 1em 0 1em 5vw;
+}
+
+.caixa {
+    background: rgba(255,255,255,0.4);
+    width: 90vw;
+    padding: 2em 0;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+.comecar {
+    background: #FFFFFF;
+    border: none;
+    border-bottom: 3px solid #CCCCCC;
+    border-radius: 6px;
+    padding: 1em 2em;
+    text-transform: uppercase;
+    color: #C84949;
+}
