@@ -36,3 +36,9 @@ body {
     color: #C84949;
     cursor: pointer;
 }
+
+.cronometro {
+    font-size: 5em;
+    margin: 0 0 1rem;
+    font-weight: 300;
+}
