@@ -34,4 +34,5 @@ body {
     padding: 1em 2em;
     text-transform: uppercase;
     color: #C84949;
+    cursor: pointer;
 }
