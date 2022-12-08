@@ -13,8 +13,8 @@
 - [X] Ter uma outra ativação do cronometro, com 5min, para o intervalo
 - [X] Mudar a cor na troca de cada estado
 - [X] Botão para pausar e retornar ao contador
-- [ ] Exibir uma contagem de pomodoros
-- [ ] Depois de 4 pomodoros ativar um intervalo longo de 15min
+- [X] Exibir uma contagem de pomodoros
+- [X] Depois de 4 pomodoros ativar um intervalo longo de 15min
 - [ ] Ter uma apresentação visual melhor para o aviso de fim do cronometro
 - [ ] Avisos sonoros para cada início e fim
 - [ ] Ativar função de ir no automático para a próxima etapa do pomodoro

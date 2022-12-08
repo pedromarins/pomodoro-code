@@ -1,8 +1,10 @@
-const milissegundosPomodoro = 4000 // Estamos usando 4 segundos para testes. O tempo oficial de 25 minutos é 25*60*1000
-const milissegundosIntervalo = 4000 // Intervalo de 5 minutos é de 300000 ms
+const milissegundosPomodoro = 3000 // Estamos usando 4 segundos para testes. O tempo oficial de 25 minutos é 25*60*1000
+const milissegundosIntervaloCurto = 3000 // Intervalo de 5 minutos é de 300000 ms
+const milissegundosIntervaloLongo = 900000 // Intervalo de 5 minutos é de 300000 ms
 const disparador = document.querySelector('#disparador')
 const cronometro = document.querySelector('#cronometro')
 const historico = document.querySelector('#historico')
+const tamanhoDoCiclo = 4
 let milissegundosRestantes = 0
 let contador
 let modo = ''
@@ -20,7 +22,12 @@ disparador.addEventListener('click', () => {
             historico.textContent = parseInt(historico.textContent) + 1
         } else if(disparador.textContent=="Intervalo") {
             modo = "intervalo"
-            milissegundosRestantes = milissegundosIntervalo - 1000
+            if (historico.textContent % tamanhoDoCiclo == 0) {
+                milissegundosRestantes = milissegundosIntervaloLongo 
+            } else {
+                milissegundosRestantes = milissegundosIntervaloCurto
+            }
+            milissegundosRestantes -= 1000
         }
 
         disparador.textContent="Pausar"
@@ -37,8 +44,13 @@ function contadorDeSegundos() {
         
         if(modo=="pomodoro") {
             disparador.textContent="Intervalo"
-            document.querySelector('body').style.background = "#287b7e"
-            disparador.style.color = "#287b7e"
+            if(historico.textContent % tamanhoDoCiclo == 0) {
+                document.querySelector('body').style.background = "#29678a"
+            disparador.style.color = "#29678a"
+            } else {
+                document.querySelector('body').style.background = "#287b7e"
+                disparador.style.color = "#287b7e"
+            }
         } else if(modo=="intervalo"){
             disparador.textContent="Começar"
             document.querySelector('body').style.background = "#C84949"
