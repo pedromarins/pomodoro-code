@@ -1,7 +1,8 @@
-const milissegundosPomodoro = 15000 // Estamos usando 4 segundos para testes. O tempo oficial de 25 minutos é 25*60*1000
-const milissegundosIntervalo = 300000
+const milissegundosPomodoro = 4000 // Estamos usando 4 segundos para testes. O tempo oficial de 25 minutos é 25*60*1000
+const milissegundosIntervalo = 4000 // Intervalo de 5 minutos é de 300000 ms
 const disparador = document.querySelector('#disparador')
 const cronometro = document.querySelector('#cronometro')
+const historico = document.querySelector('#historico')
 let milissegundosRestantes = 0
 let contador
 let modo = ''
@@ -16,7 +17,7 @@ disparador.addEventListener('click', () => {
         if(disparador.textContent=="Começar") {        
             modo = "pomodoro"
             milissegundosRestantes = milissegundosPomodoro - 1000
-            
+            historico.textContent = parseInt(historico.textContent) + 1
         } else if(disparador.textContent=="Intervalo") {
             modo = "intervalo"
             milissegundosRestantes = milissegundosIntervalo - 1000
