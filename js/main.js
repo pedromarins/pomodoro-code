@@ -18,7 +18,7 @@ disparador.addEventListener('click', () => {
     } else {
         if(disparador.textContent=="Começar") {        
             modo = "pomodoro"
-            milissegundosRestantes = milissegundosPomodoro - 1000
+            milissegundosRestantes = milissegundosPomodoro
             historico.textContent = parseInt(historico.textContent) + 1
         } else if(disparador.textContent=="Intervalo") {
             modo = "intervalo"
@@ -27,7 +27,6 @@ disparador.addEventListener('click', () => {
             } else {
                 milissegundosRestantes = milissegundosIntervaloCurto
             }
-            milissegundosRestantes -= 1000
         }
 
         disparador.textContent="Pausar"
