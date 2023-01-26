@@ -12,10 +12,16 @@ body {
     padding: 0;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 5vw;
+}
+
 .titulo {
     font-size: 1em;
     text-align: left;
-    margin: 1em 0 1em 5vw;
 }
 
 .caixa {
