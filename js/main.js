@@ -1,4 +1,4 @@
-const milissegundosPomodoro = 3000 // Estamos usando 4 segundos para testes. O tempo oficial de 25 minutos é 25*60*1000
+const milissegundosPomodoro = 3000 // Estamos usando 3 segundos para testes. O tempo oficial de 25 minutos é 25*60*1000
 const milissegundosIntervaloCurto = 3000 // Intervalo de 5 minutos é de 300000 ms
 const milissegundosIntervaloLongo = 900000 // Intervalo de 5 minutos é de 300000 ms
 const disparador = document.querySelector('#disparador')
@@ -9,6 +9,13 @@ let milissegundosRestantes = 0
 let contador
 let modo = ''
 
+
+const audioInicioPomodoro = new Audio("../audio/inicioPomodoro.ogg")
+const audioFimPomodoro = new Audio("../audio/fimPomodoro.ogg")
+
+const audioInicioIntervalo = new Audio("../audio/inicioIntervalo.ogg")
+const audioFimIntervalo = new Audio("../audio/fimIntervalo.ogg")
+
 disparador.addEventListener('click', () => {
     console.log("Disparador ativado.")
     
@@ -18,9 +25,16 @@ disparador.addEventListener('click', () => {
     } else {
         if(disparador.textContent=="Começar") {        
             modo = "pomodoro"
+
+            audioInicioPomodoro.play()
+
+            milissegundosRestantes = milissegundosPomodoro - 1000
             historico.textContent = parseInt(historico.textContent) + 1
         } else if(disparador.textContent=="Intervalo") {
             modo = "intervalo"
+
+            audioInicioIntervalo.play()
+
             if (historico.textContent % tamanhoDoCiclo == 0) {
                 milissegundosRestantes = milissegundosIntervaloLongo 
             } else {
@@ -41,6 +55,8 @@ function contadorDeSegundos() {
         console.log("O seu tempo de produção do pomodoro acabou. Vá descansar!")
         
         if(modo=="pomodoro") {
+            audioFimPomodoro.play()
+
             disparador.textContent="Intervalo"
             if(historico.textContent % tamanhoDoCiclo == 0) {
                 document.querySelector('body').style.background = "#29678a"
@@ -50,6 +66,8 @@ function contadorDeSegundos() {
                 disparador.style.color = "#287b7e"
             }
         } else if(modo=="intervalo"){
+            audioFimIntervalo.play()
+
             disparador.textContent="Começar"
             document.querySelector('body').style.background = "#C84949"
             disparador.style.color = "#C84949"
