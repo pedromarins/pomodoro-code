@@ -4,7 +4,7 @@ Ferramenta para auxiliar na aplicação do método Pomodoro. Controle seus ciclo
 
 ## Objetivo
 
-O objetivo deste projeto foi desenvolver um sistema do Pomodoro e equipe durante o evento Live CoDe.
+O objetivo deste projeto foi desenvolver um sistema do Pomodoro em equipe durante o evento Live CoDe da Comunidade CoDe.
 
 ## Construído com:
 
