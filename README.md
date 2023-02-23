@@ -33,7 +33,7 @@ O objetivo deste projeto foi desenvolver um sistema do Pomodoro em equipe durant
 
 ### Extra:
 
-- [ ] Notificações no navegador para cada aviso de início e fim
+- [X] Notificações no navegador para cada aviso de início e fim
 - [ ] Configurar a quantidade de tempo de um bloco de trabalho e um bloco de intervalo
 - [ ] Ter uma lista de tarefas executadas
 - [ ] Salvar o status no localStorage para se a aba for encerrada
